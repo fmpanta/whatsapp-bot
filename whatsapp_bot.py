@@ -3,6 +3,10 @@ from twilio.twiml.messaging_response import MessagingResponse
 
 app = Flask(__name__)
 
+@app.route("/")
+def home():
+    return "App is running!"
+
 @app.route("/whatsapp", methods=['POST'])
 def whatsapp():
     incoming_msg = request.values.get('Body', '').strip().lower()
