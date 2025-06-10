@@ -3,9 +3,9 @@ from twilio.twiml.messaging_response import MessagingResponse
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/", methods=["GET"])
 def home():
-    return "App is running!"
+    return "Bot is alive", 200
 
 @app.route("/whatsapp", methods=['POST'])
 def whatsapp():
