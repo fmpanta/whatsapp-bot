@@ -16,13 +16,13 @@ def whatsapp():
 
     if incoming_msg.startswith("search"):
         parts = incoming_msg.split()
-            if len(parts) >= 3:
+        if len(parts) >= 3:
             origin = parts[1].upper()
             destination = parts[2].upper()
             date = parts[3] if len(parts) > 3 else "any"
             flights = search_flights(origin, destination, date)
             msg.body("\n\n".join(flights))
-            else:
+        else:
             msg.body("Please use format: search LIS AMS 2024-06-12 or search LIS AMS any")
 
     return str(resp)
