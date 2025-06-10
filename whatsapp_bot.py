@@ -1,5 +1,6 @@
 from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
+import re
 from kiwi_scraper import search_flights
 
 app = Flask(__name__)
@@ -10,8 +11,6 @@ def home():
 
 @app.route("/whatsapp", methods=['POST'])
 def whatsapp():
-    from twilio.twiml.messaging_response import MessagingResponse
-    
     incoming_msg = request.values.get('Body', '').strip().lower()
     print(f"📩 Incoming: {incoming_msg}")
 
