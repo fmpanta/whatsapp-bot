@@ -10,10 +10,11 @@ def home():
 
 @app.route("/whatsapp", methods=['POST'])
 def whatsapp():
-    print("Received")
-    incoming_msg = request.values.get('Body', '').strip().lower()
+    from twilio.twiml.messaging_response import MessagingResponse
     resp = MessagingResponse()
-    msg = resp.message()
+    resp.message("Hello")
+    incoming_msg = request.values.get('Body', '').strip().lower()
+    return str(resp)
 
     if incoming_msg.startswith("search"):
         parts = incoming_msg.split()
