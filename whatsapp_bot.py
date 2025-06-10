@@ -16,7 +16,7 @@ def whatsapp():
     print(f"📩 Incoming: {incoming_msg}")
 
     resp = MessagingResponse()
-    msg = resp.messsage()
+    msg = resp.message()
 
     match = re.search(r'flight from (\w+) to (\w+)(?: on (\d{4}-\d{2}-\d{2}))?', incoming_msg)
     if match:
