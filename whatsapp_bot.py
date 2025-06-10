@@ -13,7 +13,7 @@ def whatsapp():
     from twilio.twiml.messaging_response import MessagingResponse
     
     incoming_msg = request.values.get('Body', '').strip().lower()
-    print(f"📩 Incoming: {incoming_msg})
+    print(f"📩 Incoming: {incoming_msg}")
 
     resp = MessagingResponse()
     msg = resp.messsage()
