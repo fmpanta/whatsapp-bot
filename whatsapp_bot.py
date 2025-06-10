@@ -10,6 +10,7 @@ def home():
 
 @app.route("/whatsapp", methods=['POST'])
 def whatsapp():
+    print("Received")
     incoming_msg = request.values.get('Body', '').strip().lower()
     resp = MessagingResponse()
     msg = resp.message()
